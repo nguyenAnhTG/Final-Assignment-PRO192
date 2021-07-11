@@ -117,10 +117,14 @@ public class DrugList extends Vector<Drug> implements Function {
             System.out.println("File rỗng");
             return;
         }
+        String format="%-8s%-25s%-12s%s";
         System.out.println("-----------------------");
-        System.out.println("ID\tName\t\tWeight and Price");
+        System.out.printf(format,"ID","Name","Weight(kg)","Price(kg/vnd)");
+        System.out.print("\n");
         for(Drug x: this){
-            System.out.println(x);
+            x.print();
+            System.out.print("\n");
+
         }
     }
 
