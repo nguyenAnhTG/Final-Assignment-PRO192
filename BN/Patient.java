@@ -40,6 +40,12 @@ public class Patient extends Information{
         return  s + " ||  " + diseaseName ;
     }
     
+    @Override
+    public void print() {
+        super.print(); 
+        System.out.printf("%s",diseaseName);
+    }
+    
     public void update(){
         //String ID, String name, String sex, long birth, int phone, String address, String diseaseName
         Scanner sc=new Scanner(System.in);
