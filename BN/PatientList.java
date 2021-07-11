@@ -132,10 +132,13 @@ public class PatientList extends Vector<Patient> implements Function{
             System.out.println("File rỗng!");
             return;
         }
+        String format="%-8s%-25s%-55s%s";
         System.out.println("-----------------------------");
-        System.out.println("ID\tName\t\t\tInformation");
+        System.out.printf(format,"ID","Name","Information","Disease");
+        System.out.print("\n");
         for(Patient x: this){
-            System.out.println(x);
+            x.print();
+            System.out.print("\n");
         }
     }
 
