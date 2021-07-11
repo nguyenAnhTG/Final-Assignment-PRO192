@@ -144,11 +144,13 @@ public class DoctorList extends Vector <Doctor> implements Function{
             System.out.println("file rỗng!!");
             return;
         }   
-        
+        String format="%-8s%-25s%s";
         System.out.println("-----------------------------");
-        System.out.println("ID\tName\t\t\tInformation");
+        System.out.println(format,"ID","Name","Information");
+        System.out.print("\n");
         for(Doctor x: this){
-            System.out.println(x);
+            x.print();
+            System.out.print("\n");
         }
     }
 
