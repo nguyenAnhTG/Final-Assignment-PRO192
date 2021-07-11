@@ -48,6 +48,13 @@ public class Doctor extends Information {
         s=s+ " ||   " + getPosition() + ": " + getSpecialized();
         return s;
     } 
+    
+    @Override
+    public void print() {
+        String infoD= getPositon()+","+getSpecialized();
+        super.print();
+        System.out.printf(" %s", infoD);
+    }
 
     public void update(){
         Scanner sc=new Scanner(System.in);
