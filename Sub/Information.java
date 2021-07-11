@@ -82,6 +82,10 @@ public class Information {
         return getID() + "\t" + getName() + "\t\t\t" + getSex() + " | " + getBirth() + " | " + getPhone() + " | " + getAddress() ;
     }
     
-    
+    public void print(){
+        String format="%-8s%-25s%-55s";
+        String info= getSex()+", "+getBirth()+","+getPhone()+","+getAddress();
+        System.out.printf(format,getID(),getName(),info);
+    }
     
 }
