@@ -68,7 +68,7 @@ public class OrderList  implements Function{
                 }
                 totalPrice=Double.parseDouble(arr[arr.length-1]);
                 list.add(orderID+patientID+doctorID+dease+S+totalPrice);
-                S="";
+                S="";//o day phai reset s, k la no se bi duplicate du lieu voi order khac
 
             }
             
@@ -83,7 +83,7 @@ public class OrderList  implements Function{
     @Override
     public void SaveToFile(String fName) {
         if(list.isEmpty()) {
-            System.out.println("List rỗng");
+            System.out.println("Empty List!");
             return;
         }
         File f=new File(fName);
@@ -103,9 +103,9 @@ public class OrderList  implements Function{
     
     public void addNewOrder(DoctorList dList,PatientList pList, DrugList drList){
         Random rand= new Random();
-        String patientID,doctorID,dease,drugID,s="",s1="";
+        String patientID,doctorID,dease,drugID,s="",s1="";//s la de luu du lieu new order
         int quantity;
-        boolean flag=true;
+        boolean flag=true;//dung cho cac vong do while
         
         double price,totalPrice=0;
           
@@ -200,6 +200,7 @@ public class OrderList  implements Function{
         return false;
     }
     
+    //ham nay dung de check patientid co ton tai trong cac order hay k
     public boolean checkPatientID(String givenID){
         for(int i=0;i<list.size();i++){
             if(givenID.equals(list.get(i).substring(6, 11))) return true;

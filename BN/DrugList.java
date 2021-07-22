@@ -72,8 +72,9 @@ public class DrugList extends Vector<Drug> implements Function {
             for(Drug x: this){
                 pw.print(x.getID()+","+x.getName()+","+x.getPrice()+"\n");
             }
-            System.out.println("Save to file successfully!");
             pw.close();fw.close();
+            System.out.println("Save to file successfully!");
+            
         } catch (IOException e) {
             Logger.getLogger(DrugList.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -95,6 +96,8 @@ public class DrugList extends Vector<Drug> implements Function {
         System.out.println("New Drug has been added successfully!");
     }
 
+    
+    //ham nay tim vi tri cua id, con ham checkID thi check xem id co bi trung k
     @Override
     public int find(String aId) {
         for(int i=0; i<this.size();i++){
@@ -146,11 +149,12 @@ public class DrugList extends Vector<Drug> implements Function {
 
     @Override
     public void remove() {
+        //2 bien nay dung de luu id va name cu
         String rID,name;
         System.out.print("Enter ID Drug u want to remove: ");
         rID=sc.nextLine().toUpperCase();
         int tmp=find(rID);
-        if(tmp<0) System.out.println("Drug is not existed!!");
+        if(tmp<0) System.out.println("Drug does not exist!!");
         else{
             name=this.get(tmp).getName();
             this.remove(tmp);
@@ -158,6 +162,7 @@ public class DrugList extends Vector<Drug> implements Function {
         }
     }
     
+    //check xem co bi trung id k
     public boolean checkID(String givenID){
         for (int i = 0; i < this.size(); i++) {
             if(givenID.equals((this.get(i).getID())))

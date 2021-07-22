@@ -90,10 +90,10 @@ public class PatientList extends Vector<Patient> implements Function{
     @Override
     public void addnew() {
         String newID, newName, newSex, newAdd, newDisea;
-        int newBirth, tmp;
+        int newBirth;
         long newPhone;
-        boolean valid=true;
-        System.out.println("-==============Enter new info of Doctor==============-");
+        
+        System.out.println("-==============Enter new info of Patient==============-");
         newID=autoGenerateID("Patient");
         System.out.print("\n\tName: ");
         newName=sc.nextLine().toUpperCase();
