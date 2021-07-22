@@ -13,14 +13,14 @@ public class Information {
     private String ID;  
     private String name;
     private String sex;
-    private long birth;
-    private int phone;
+    private int birth;
+    private long phone;
     private String address;
 
     public Information() {
     }
 
-    public Information(String ID, String name, String sex, long birth, int phone, String address) {
+    public Information(String ID, String name, String sex, int birth, long phone, String address) {
         this.ID = ID;
         this.name = name;
         this.sex = sex;
@@ -53,21 +53,23 @@ public class Information {
         this.sex = sex;
     }
 
-    public long getBirth() {
+    public int getBirth() {
         return birth;
     }
 
-    public void setBirth(long birth) {
+    public void setBirth(int birth) {
         this.birth = birth;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
+
+    
 
     public String getAddress() {
         return address;

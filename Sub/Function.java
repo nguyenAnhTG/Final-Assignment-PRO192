@@ -13,8 +13,10 @@ public interface Function {
     public void AddFromFile(String fName);
     public void SaveToFile(String fName);
     public void addnew();
-    public int find(String aId);
+    public  int find(String aId);
     public void display();
     public void update();
     public void remove();
+    public boolean checkID(String givenID);
+    public String autoGenerateID(String typeID);
 }
