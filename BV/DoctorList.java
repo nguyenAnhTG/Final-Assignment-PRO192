@@ -26,16 +26,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author LAPTOP VINH HA
- */
 public class DoctorList extends Vector <Doctor> implements Function{
     Scanner sc = new Scanner(System.in);
 
@@ -88,8 +79,9 @@ public class DoctorList extends Vector <Doctor> implements Function{
             for(Doctor x: this){
                 pw.print(x.getID()+ "," + x.getName()+","+x.getSex() + "," + x.getBirth() +","+x.getPhone() + ","+x.getAddress() + ","+x.getSpecialized()+"\n");
             }
-            System.out.println("Save to file successfully!");
+            
             pw.close(); fw.close();
+            System.out.println("Save to file successfully!");
         } catch (IOException ex) {
             Logger.getLogger(DoctorList.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -160,7 +152,7 @@ public class DoctorList extends Vector <Doctor> implements Function{
             System.out.println("ID Doctor does not exist");
             return;
         }
-        System.out.println("Start updating.....");
+        System.out.println("Start updating.....\n");
         Scanner sc=new Scanner(System.in);
         System.out.println("Old information: ");
         String s=String.format("%-8s%-20s%-6s%-7s%-15s%-15s%-20s\n", "ID","NAME","SEX","BITRH","PHONE","ADDRESS","SPECIALIZED");
